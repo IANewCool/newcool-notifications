@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { NotificationCenter } from '@/components/NotificationCenter/NotificationCenter'
 import { PreferencesForm } from '@/components/PreferencesForm/PreferencesForm'
+import { T12Provider } from '@/components/T12Provider'
 import { useNotificationStore } from '@/lib/stores/useNotificationStore'
 
 type Tab = 'notifications' | 'preferences' | 'stats'
@@ -30,6 +31,7 @@ export default function NotificationsDashboard() {
   }
 
   return (
+    <T12Provider>
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-pink-900/20">
       {/* Header */}
       <header className="bg-gradient-to-r from-gray-900/80 via-purple-900/40 to-pink-900/40 backdrop-blur-xl border-b border-purple-500/20 p-8">
@@ -202,5 +204,6 @@ export default function NotificationsDashboard() {
         <p>NewCool Notifications | T12-COMMUNITY | Sistema Multicanal</p>
       </footer>
     </div>
+    </T12Provider>
   )
 }
